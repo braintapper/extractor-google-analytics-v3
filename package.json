@@ -1,6 +1,6 @@
 {
   "name": "extractor-google-analytics-v3",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,6 @@
     "gulp-coffee": "^3.0.3"
   },
   "dependencies": {
-    "axios": "^0.19.2",
     "fs-extra": "^9.0.0",
     "googleapis": "^34.0.0",
     "sugar-and-spice": "^0.0.3"
