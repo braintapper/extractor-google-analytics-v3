@@ -5,7 +5,7 @@ config = fs.readJsonSync "./testconfig/config.json"
 
 
 
-GA = new Extractor(config)
+API = new Extractor(config)
 
 console.log config
 
@@ -19,4 +19,4 @@ ecb = (e)->
 fcb = ()->
   console.log "FINALLY..."
 
-GA.execute  scb, ecb, fcb
+API.execute  scb, ecb, fcb

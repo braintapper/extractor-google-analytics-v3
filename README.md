@@ -1,12 +1,5 @@
-# Extractor Template
+# Extractor for Google Analytics V3
 
-```
-degit braintapper/extractor-template
-#or
-npx degit braintapper/extractor-template
-
-npm install
-```
 
 
 

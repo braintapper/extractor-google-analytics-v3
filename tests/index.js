@@ -1,4 +1,4 @@
-var Extractor, GA, config, ecb, fcb, fs, scb;
+var API, Extractor, config, ecb, fcb, fs, scb;
 
 Extractor = require("../index.js");
 
@@ -6,7 +6,7 @@ fs = require("fs-extra");
 
 config = fs.readJsonSync("./testconfig/config.json");
 
-GA = new Extractor(config);
+API = new Extractor(config);
 
 console.log(config);
 
@@ -26,4 +26,4 @@ fcb = function() {
   return console.log("FINALLY...");
 };
 
-GA.execute(scb, ecb, fcb);
+API.execute(scb, ecb, fcb);

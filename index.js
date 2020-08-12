@@ -41,8 +41,6 @@ ExtractorGoogleAnalyticsV3 = (function() {
         google = require('googleapis').google;
         // load json file for service which was created from the api developer console
         key = fs.readJsonSync(that.json_path);
-        //console.log "KEY"
-        //console.log key
         scopes = 'https://www.googleapis.com/auth/analytics.readonly';
         // only two pieces from the json file are used, client_email and private_key
         jwt = new google.auth.JWT(key.client_email, null, key.private_key, scopes);
@@ -100,6 +98,19 @@ ExtractorGoogleAnalyticsV3 = (function() {
     "include-empty-rows": true,
     "max-results": 1000,
     "start-index": 1
+  };
+
+  // overridable
+  ExtractorGoogleAnalyticsV3.prototype.logger = {
+    info: function(message) {
+      return console.log(message);
+    },
+    warn: function(message) {
+      return console.warn(message);
+    },
+    error: function(message) {
+      return console.error(message);
+    }
   };
 
   return ExtractorGoogleAnalyticsV3;

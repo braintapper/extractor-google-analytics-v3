@@ -26,6 +26,15 @@ class ExtractorGoogleAnalyticsV3
     "start-index": 1
 
 
+  # overridable
+  logger:
+    info: (message)->
+      console.log message
+    warn: (message)->
+      console.warn message
+    error: (message)->
+      console.error message
+
   constructor: (config)->
     @json_path = config.json_path
     @options.ids = config.view_id
@@ -62,8 +71,7 @@ class ExtractorGoogleAnalyticsV3
       google = require('googleapis').google
       # load json file for service which was created from the api developer console
       key = fs.readJsonSync(that.json_path)
-      #console.log "KEY"
-      #console.log key
+
       scopes = 'https://www.googleapis.com/auth/analytics.readonly'
       # only two pieces from the json file are used, client_email and private_key
       jwt = new google.auth.JWT(key.client_email, null, key.private_key, scopes)
