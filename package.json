@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "fs-extra": "^9.0.0",
-    "googleapis": "^34.0.0",
+    "googleapis": "^39.1.0",
     "sugar-and-spice": "^0.0.3"
   }
 }
